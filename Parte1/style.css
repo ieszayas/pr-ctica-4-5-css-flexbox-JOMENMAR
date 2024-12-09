@@ -1,0 +1,86 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estructura global */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro del body estén en columna */
+}
+
+/* Contenedor principal */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Organiza el header y el footer en columna */
+    flex-grow: 1; /* Hace que el contenedor ocupe el espacio disponible */
+    height: 100%; /* Ocupa toda la altura disponible */
+}
+
+/* Header */
+.header {
+    background-color: #561ab6;
+    text-align: center;
+    padding: 20px; /* Ajuste del padding */
+    flex: 0 1 auto; /* El header no crece, solo se ajusta a su contenido */
+}
+
+/* Contenedor del contenido principal */
+.content {
+    display: flex; /* Organiza nav, article y aside en fila */
+    gap: 0; /* Elimina el espacio entre los elementos */
+    flex-grow: 1; /* Hace que el contenido crezca y ocupe el espacio disponible */
+    min-height: 0; /* Asegura que el contenedor pueda reducirse si es necesario */
+    height: 100%; /* Asegura que el contenedor del contenido ocupe todo el espacio */
+}
+
+/* Nav, Article y Aside */
+.nav {
+    background-color: #ce8181;
+    flex: 1 1 20%; /* Toma el 20% del ancho */
+    min-width: 150px;
+    margin: 0; /* Elimina margen */
+    height: 100%; /* Asegura que el nav ocupe todo el alto */
+}
+
+.article {
+    background-color: #887d1b;
+    flex: 2 1 60%; /* Toma el 60% del ancho */
+    min-width: 300px;
+    margin: 0; /* Elimina margen */
+    height: 100%; /* Asegura que el article ocupe todo el alto */
+}
+
+.aside {
+    background-color: #0bd470;
+    flex: 1 1 20%; /* Toma el 20% del ancho */
+    min-width: 150px;
+    margin: 0; /* Elimina margen */
+    height: 100%; /* Asegura que el aside ocupe todo el alto */
+}
+
+/* Footer */
+.footer {
+    background-color: #3d5496;
+    color: white;
+    text-align: center;
+    padding: 20px; /* Ajuste del padding */
+    flex: 0 1 auto; /* El footer no crece, solo se ajusta a su contenido */
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 640px) {
+    .content {
+        flex-direction: column; /* Cambia el contenido a una columna */
+    }
+
+    .header, .footer, .nav, .article, .aside {
+        flex: 1 1 100%; /* Cada elemento ocupa todo el ancho */
+        padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+}
