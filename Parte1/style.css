@@ -1,0 +1,78 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura de la página */
+    width: 100vw; /* Ocupa toda la anchura de la página */
+}
+
+.header {
+    background-color: #524c50;
+    text-align: center;
+    font-weight: bold;
+    flex: 0 0 10%; /* Ocupa el 10% de la altura */
+}
+
+.footer {
+    background-color: #4ad383;
+    text-align: center;
+    font-weight: bold;
+    flex: 0 0 10%; /* Ocupa el 10% de la altura */
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Permite el ajuste dinámico de los elementos */
+    flex: 1 1 auto; /* El contenido ocupa el espacio restante */
+}
+
+.nav {
+    flex: 1 1 20%; /* Ocupa al menos el 20% del ancho */
+    background-color: #144c53;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.article {
+    flex: 2 1 60%; /* Ocupa el 60% del ancho, más espacio que los demás */
+    background-color: #d7db85;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.aside {
+    flex: 1 1 20%; /* Ocupa al menos el 20% del ancho */
+    background-color: #d8b4f8;
+    box-sizing: border-box;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+    }
+    .nav, .article, .aside {
+        flex: 1 1 auto; /* Ocupan el 100% del ancho disponible */
+    }
+}
+
+/* En pantallas menores de 480px */
+@media (max-width: 480px) {
+    .header, .footer {
+        flex: 0 0 auto;
+        font-size: 14px; /* Ajustamos el tamaño de texto */
+    }
+    .nav, .article, .aside {
+        padding: 5px; /* Reducimos los bordes internos */
+    }
+}
